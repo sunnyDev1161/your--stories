@@ -1,0 +1,15 @@
+{
+  "name": "storybook",
+  "version": "1.0.0",
+  "description": "this is app is about writing publically and privatly",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Hasnain shah",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.5.11"
+  }
+}
