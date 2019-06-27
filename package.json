@@ -1,17 +1,15 @@
 {
   "name": "storybook",
   "version": "1.0.0",
-  "description": "this is app is about writing publically and privatly",
+  "description": "this is the story book app where you can write something which can b priate and public",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hasnain shah",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.5.11",
-    "passport": "^0.4.0",
-    "passport-google-oauth20": "^2.0.0"
+    "mongoose": "^5.6.1"
   }
 }
