@@ -4,7 +4,7 @@
   "description": "this is the story book app where you can write something which can b priate and public",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "Hasnain shah",
   "license": "ISC",
