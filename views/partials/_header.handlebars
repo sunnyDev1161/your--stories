@@ -1,0 +1,57 @@
+<nav class="grey darken-2">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="/stories" class="center brand-logo">StoryBook</a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger" class="button-collapse show-on-all">
+                <i class="fas fa-bars"></i>
+            </a>
+            {{!-- Right Navbar --}}
+            <ul class="right hide-on-small-only">
+                {{#if user}}
+                <li>
+                    <a href="/dashboard">Welcome {{user.firstName}}</a>
+                </li>
+                <li>
+                    <a href="/auth/logout">Logout</a>
+                </li>
+                {{else}}
+                <li>
+                    <a href="/stories"><i class="fal fa-book-reader"></i>Public Stories</a>
+                </li>
+
+                {{/if}}
+            </ul>
+
+            {{!-- Side Bar Content here --}}
+            <ul id="slide-out" class="sidenav">
+
+                {{#if user}}
+                {{else}}
+                <li>
+                    <a href="/auth/google" class="btn red darken-2"><i class="fab fa-google left"></i>Log in with
+                        Google</a>
+
+                </li>
+                {{/if}}
+                {{#if user}}
+                <li>
+                    <a href="/stories"><i class="fas fa-book-reader"></i>Public Stories</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="/dashboard"><i class="fas fa-users-cog"></i>Dashboard</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="/stories/my"><i class="fas fa-book-reader"></i>My Stories</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                </li>
+                <li class="divider"></li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
