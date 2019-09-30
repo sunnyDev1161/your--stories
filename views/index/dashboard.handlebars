@@ -1,1 +1,28 @@
 <h1>Welcome {{user.firstName}} {{user.lastName}}</h1>
+
+<h2>Your Stories</h2>
+
+{{#if stories}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each stories}}
+        <tr>
+            <td>{{title}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{else}}
+<p>You have not created any story</p>
+{{/if}}

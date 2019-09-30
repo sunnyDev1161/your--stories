@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{!-- materialize CDN --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    {{!-- style.css --}}
+    <link rel="stylesheet" href="/css/style.css">
     {{!-- Fontawesome CDN --}}
     <script src="https://kit.fontawesome.com/a9a65b20cf.js"></script>
     <title>StoryBook</title>
@@ -14,11 +16,13 @@
 
 <body>
     {{> _header}}
+    {{> _floating-btn}}
     <main>
         <div class="">
             {{{body}}}
         </div>
     </main>
+    {{> _footer}}
 
     {{!-- jquery CDN --}}
     <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -27,6 +31,9 @@
     {{!-- materialize CDN javascript --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    {{!-- CKeditor CDN --}}
+    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
 
 
     <script>
@@ -43,7 +50,13 @@
 
         $(document).ready(function () {
             $('.sidenav').sidenav();
+
         });
+        $(document).ready(function () {
+            $('select').formSelect();
+        })
+        CKEDITOR.replace('body')
+
     </script>
 </body>
 

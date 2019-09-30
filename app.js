@@ -1,14 +1,16 @@
 const express = require("express");
+const path = require("path");
 const expressHandlebars = require("express-handlebars");
+const bodyParser = require("body-parser");
 const passport = require("passport");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
-// Load user model
-
+// Load  models
 require("./modals/user");
+require("./modals/story");
 
 // connect mongoDB
 mongoose
@@ -20,11 +22,21 @@ mongoose
 
 const app = express();
 
-// handlebars middleware
+// import hbs
+const { truncate, stripTags, formatDate } = require("./helpers/hbs");
+// lbody-parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
+// handlebars middleware
 app.engine(
   "handlebars",
   expressHandlebars({
+    helpers: {
+      truncate: truncate,
+      stripTags: stripTags,
+      formatDate: formatDate
+    },
     defaultLayout: "main"
   })
 );
@@ -42,7 +54,7 @@ app.use(cookieParser());
 //express-session
 app.use(
   session({
-    secret: "secret",
+    secret: "secret", 
     resave: false,
     saveUninitialized: true
   })
@@ -64,6 +76,10 @@ app.use((req, res, next) => {
 app.use("/", index);
 app.use("/auth", auth);
 app.use("/stories", stories);
+
+// path
+
+app.use(express.static(path.join(__dirname, "public")));
 
 const port = process.env.PORT || 5000;
 

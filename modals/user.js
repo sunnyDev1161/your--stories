@@ -23,4 +23,4 @@ const UserSchema = new Schema({
 
 // creating a collection of the modal
 
-mongoose.model("user", UserSchema);
+mongoose.model("user", UserSchema, "user");

@@ -18,8 +18,7 @@ routers.get(
 );
 
 routers.get("/verify", (req, res) => {
-  if (req.user) {
-    console.log(req.user);
+  if (req.user) {  
   } else {
     console.log("NOT AUTHENTICATED");
   }
